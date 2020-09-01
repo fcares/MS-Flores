@@ -1,0 +1,352 @@
+
+<!-- 
+<!DOCTYPE HTML>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>Getting Started: Serving Web Content</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+</head>
+<body>
+    <p th:text="'Para el archivo excel:' + ${nombreArchivoFlores} + '!'" />
+    
+    <table border="1">
+		<tr>    
+			<td width="55">Nombre <img src="file:/C:/flores/imagenes/mrc_espaciador.gif" alt="" width="105" height="13"></td>     
+			<td width="37">Fecha  <img src="file:/C:/flores/imagenes/mrc_espaciador.gif" width="105" height="13"></td>
+			<td width="62">rock_rose</td>
+			<td width="51">Mimulus</td>
+			<td width="80">Cherry_Plum</td>
+			<td width="39">Aspen</td>
+			<td width="116">CherRed_Chestnut</td>
+			<td width="42">Cerato</td>
+			<td width="69">Scleranthus</td>
+			<td width="46">Gentian</td>
+			<td width="60">Wild_Oat</td>
+			<td width="37">Gorse</td>
+			<td width="64">Hornbeam</td>
+			<td width="52">Clematis</td>
+			<td width="78">Honeysuckle</td>
+			<td width="68">Wild_Rose</td>
+			<td width="32">Olive</td>
+			<td width="97">White_Chestnut</td>
+			<td width="86">Chestnut_Bud</td>
+			<td width="51">Mustard</td>
+			<td width="59">Agrimony</td>
+			<td width="55">Centaury</td>
+			<td width="8">Walnut</td>
+			<td width="8">Holly</td>
+			<td width="7">Water_Violet</td>
+			<td width="8">Impatiens</td>
+			<td width="6">Heather</td>
+			<td width="5">Larch</td>
+			<td width="7">Pine</td>
+			<td width="6">Elm</td>
+			<td width="4">Sweet_Chestnut</td>
+			<td width="3">Star_of_Bethlehem</td>
+			<td width="2">Willow</td>
+			<td width="23">Oak</td>
+			<td width="1">Crab_Apple</td>
+			<td width="3">Chicory</td>
+			<td width="1">Vervain</td>
+			<td width="2">Vine</td>
+			<td width="1">Beech</td>
+			<td width="94">Rock_Water</td>
+		</tr>  
+    	<th:block th:each="res : ${resultadoProcesoFlores}">
+    		<tr>
+ 				<td th:text="${res.nombre}"> ..</td>
+		     	<td th:text="${res.fecha}"> ..</td>
+		     	<td th:text="${res.Rock_rose}"> ..</td>
+		     	<td th:text="${res.Mimulus}"> ..</td>  
+		     	<td th:text="${res.Cherry_Plum}"> ..</td> 
+		     	<td th:text="${res.Aspen}"> ..</td>    
+		     	<td th:text="${res.CherRed_Chestnut}"> ..</td>    
+		     	<td th:text="${res.Cerato}"> ..</td>   
+		     	<td th:text="${res.Scleranthus}"> ..</td> 
+		     	<td th:text="${res.Gentian}"> ..</td>  
+		     	<td th:text="${res.Wild_Oat}"> ..</td> 
+		     	<td th:text="${res.Gorse}"> ..</td>    
+		     	<td th:text="${res.Hornbeam}"> ..</td> 
+		     	<td th:text="${res.Clematis}"> ..</td> 
+		     	<td th:text="${res.Honeysuckle}"> ..</td> 
+		     	<td th:text="${res.Wild_Rose}"> ..</td>
+		     	<td th:text="${res.Olive}"> ..</td>    
+		     	<td th:text="${res.White_Chestnut}"> ..</td>      
+		     	<td th:text="${res.Chestnut_Bud}"> ..</td>
+		     	<td th:text="${res.Mustard}"> ..</td>  
+		     	<td th:text="${res.Agrimony}"> ..</td> 
+		     	<td th:text="${res.Centaury}"> ..</td> 
+		     	<td th:text="${res.Walnut}"> ..</td>   
+		     	<td th:text="${res.Holly}"> ..</td>    
+		     	<td th:text="${res.Water_Violet}"> ..</td>
+		     	<td th:text="${res.Impatiens}"> ..</td>
+		     	<td th:text="${res.Heather}"> ..</td>  
+		     	<td th:text="${res.Larch}"> ..</td>    
+		     	<td th:text="${res.Pine}"> ..</td>     
+		     	<td th:text="${res.Elm}"> ..</td>      
+		     	<td th:text="${res.Sweet_Chestnut}"> ..</td>      
+		     	<td th:text="${res.Star_of_Bethlehem}"> ..</td>   
+		     	<td th:text="${res.Willow}"> ..</td>   
+		     	<td th:text="${res.Oak}"> ..</td>      
+		     	<td th:text="${res.Crab_Apple}"> ..</td>  
+		     	<td th:text="${res.Chicory}"> ..</td>  
+		     	<td th:text="${res.Vervain}"> ..</td>  
+		     	<td th:text="${res.Vine}"> ..</td>     
+		     	<td th:text="${res.Beech}"> ..</td>    
+		     	<td th:text="${res.Rock_Water}"> ..</td>  			
+    		</tr>
+    	</th:block>		
+    </table>
+</body>
+</html>
+
+ -->
+ 
+ 
+ 
+ 
+ <!--
+
+<!DOCTYPE HTML>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>Getting Started: Serving Web Content</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+</head>
+<body>
+   
+
+<div>
+    <form method="POST" enctype="multipart/form-data" action="/informacionFlores">
+    
+       <table>
+            <tr><td>File to upload:</td><td><input type="file" name="file" /></td></tr>
+            <tr><td></td><td><input type="submit" value="Upload" /></td></tr>
+        </table>
+    </form>
+</div>
+
+<div>
+    <ul>
+        <li th:each="file : ${files}">
+            <a th:href="${file}" th:text="${file}" />
+        </li>
+    </ul>
+</div>
+
+
+
+
+</body>
+
+
+</html>
+-->
+
+
+<!DOCTYPE html>
+<!-- saved from url=(0027)http://tikai.cl/cursos.html -->
+<html lang="en" class="csstransforms csstransforms3d csstransitions" xmlns:th="http://www.thymeleaf.org"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="">
+    <meta name="author" content="">
+    <title>Ingresa tu formulario | Tikai</title>
+   
+    <link href="http://tikai.cl/css/bootstrap.min.css" rel="stylesheet">
+    <link href="http://tikai.cl/css/font-awesome.min.css" rel="stylesheet">
+    <link href="http://tikai.cl/css/prettyPhoto.css" rel="stylesheet">
+    <link href="http://tikai.cl/css/animate.min.css" rel="stylesheet">
+    <link href="http://tikai.cl/css/main.css" rel="stylesheet">
+    <link href="http://tikai.cl/css/responsive.css" rel="stylesheet">
+    <!--[if lt IE 9]>
+    <script src="js/html5shiv.js"></script>
+    <script src="js/respond.min.js"></script>
+    <![endif]-->       
+    <link rel="shortcut icon" href="http://tikai.cl/images/ico/4233favicon.ico">
+    <link rel="apple-touch-icon-precomposed" sizes="144x144" href="http://tikai.cl/images/ico/apple-touch-icon-144-precomposed.png">
+    <link rel="apple-touch-icon-precomposed" sizes="114x114" href="http://tikai.cl/images/ico/apple-touch-icon-114-precomposed.png">
+    <link rel="apple-touch-icon-precomposed" sizes="72x72" href="http://tikai.cl/images/ico/apple-touch-icon-72-precomposed.png">
+    <link rel="apple-touch-icon-precomposed" href="http://tikai.cl/images/ico/apple-touch-icon-57-precomposed.png">
+</head><!--/head-->
+<body style="">
+
+    <header id="header">
+       
+
+        <nav class="navbar navbar-inverse" role="banner">
+            <div class="container">
+                <div class="navbar-header">
+                    <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+                        <span class="sr-only">Toggle navigation</span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                    </button>
+                    <a class="navbar-brand" href="http://tikai.cl/index.html"><img src="http://tikai.cl/images/logo.png" alt="logo"></a>
+                </div>
+				
+                <div class="collapse navbar-collapse navbar-right">
+                    <ul class="nav navbar-nav">
+                            <li class="dropdown">
+                            <a href="http://tikai.cl/cursos.html#" class="dropdown-toggle" data-toggle="dropdown">TERAPIAS <i class="fa fa-angle-down"></i></a>
+                            <ul class="dropdown-menu">
+                                <li><a href="http://tikai.cl/flores.html">Flores de Bach</a></li>
+                                <li><a href="http://tikai.cl/registros.html">Registros Akáshicos</a></li>
+                                <li><a href="http://tikai.cl/tarot.html">Tarot Terapeutico</a></li>
+                            </ul>
+                        </li>
+                         
+                        <li><a href="http://tikai.cl/cursos.html">CURSOS</a></li>
+                        <li><a href="http://tikai.cl/sobremi.html">SOBRE MI</a></li>
+                        <li><a href="http://tikai.cl/contacto.html">CONTACTO</a></li>                        
+                    </ul>
+                </div>
+                
+            </div><!--/.container-->
+      </nav><!--/nav-->
+        
+    </header><!--/header-->
+    <div class="container">
+            <div class="center"> 
+    			<div class="col-sm-12 text-center">
+	               <h2><p th:text="'Resultado Para el archivo excel:' + ${nombreArchivoFlores}" /></h2>
+	            </div>
+	         </div>
+	 </div>           
+    
+    <section id="portfolio">
+        <div class="container">
+            <div class="center">           
+				
+	             <div class="col-sm-6 text-center">
+	          		<form method="POST" enctype="multipart/form-data" action="/informacionFlores">
+	                    <table border="1">
+		<tr>    
+			<td width="55">Nombre <img src="file:/C:/flores/imagenes/mrc_espaciador.gif" alt="" width="105" height="13"></td>     
+			<td width="37">Fecha  <img src="file:/C:/flores/imagenes/mrc_espaciador.gif" width="105" height="13"></td>
+			<td width="62">rock_rose</td>
+			<td width="51">Mimulus</td>
+			<td width="80">Cherry_Plum</td>
+			<td width="39">Aspen</td>
+			<td width="116">CherRed_Chestnut</td>
+			<td width="42">Cerato</td>
+			<td width="69">Scleranthus</td>
+			<td width="46">Gentian</td>
+			<td width="60">Wild_Oat</td>
+			<td width="37">Gorse</td>
+			<td width="64">Hornbeam</td>
+			<td width="52">Clematis</td>
+			<td width="78">Honeysuckle</td>
+			<td width="68">Wild_Rose</td>
+			<td width="32">Olive</td>
+			<td width="97">White_Chestnut</td>
+			<td width="86">Chestnut_Bud</td>
+			<td width="51">Mustard</td>
+			<td width="59">Agrimony</td>
+			<td width="55">Centaury</td>
+			<td width="8">Walnut</td>
+			<td width="8">Holly</td>
+			<td width="7">Water_Violet</td>
+			<td width="8">Impatiens</td>
+			<td width="6">Heather</td>
+			<td width="5">Larch</td>
+			<td width="7">Pine</td>
+			<td width="6">Elm</td>
+			<td width="4">Sweet_Chestnut</td>
+			<td width="3">Star_of_Bethlehem</td>
+			<td width="2">Willow</td>
+			<td width="23">Oak</td>
+			<td width="1">Crab_Apple</td>
+			<td width="3">Chicory</td>
+			<td width="1">Vervain</td>
+			<td width="2">Vine</td>
+			<td width="1">Beech</td>
+			<td width="94">Rock_Water</td>
+		</tr>  
+    	<th:block th:each="res : ${resultadoProcesoFlores}">
+    		<tr>
+ 				<td th:text="${res.nombre}"> ..</td>
+		     	<td th:text="${res.fecha}"> ..</td>
+		     	<td th:text="${res.Rock_rose}"> ..</td>
+		     	<td th:text="${res.Mimulus}"> ..</td>  
+		     	<td th:text="${res.Cherry_Plum}"> ..</td> 
+		     	<td th:text="${res.Aspen}"> ..</td>    
+		     	<td th:text="${res.CherRed_Chestnut}"> ..</td>    
+		     	<td th:text="${res.Cerato}"> ..</td>   
+		     	<td th:text="${res.Scleranthus}"> ..</td> 
+		     	<td th:text="${res.Gentian}"> ..</td>  
+		     	<td th:text="${res.Wild_Oat}"> ..</td> 
+		     	<td th:text="${res.Gorse}"> ..</td>    
+		     	<td th:text="${res.Hornbeam}"> ..</td> 
+		     	<td th:text="${res.Clematis}"> ..</td> 
+		     	<td th:text="${res.Honeysuckle}"> ..</td> 
+		     	<td th:text="${res.Wild_Rose}"> ..</td>
+		     	<td th:text="${res.Olive}"> ..</td>    
+		     	<td th:text="${res.White_Chestnut}"> ..</td>      
+		     	<td th:text="${res.Chestnut_Bud}"> ..</td>
+		     	<td th:text="${res.Mustard}"> ..</td>  
+		     	<td th:text="${res.Agrimony}"> ..</td> 
+		     	<td th:text="${res.Centaury}"> ..</td> 
+		     	<td th:text="${res.Walnut}"> ..</td>   
+		     	<td th:text="${res.Holly}"> ..</td>    
+		     	<td th:text="${res.Water_Violet}"> ..</td>
+		     	<td th:text="${res.Impatiens}"> ..</td>
+		     	<td th:text="${res.Heather}"> ..</td>  
+		     	<td th:text="${res.Larch}"> ..</td>    
+		     	<td th:text="${res.Pine}"> ..</td>     
+		     	<td th:text="${res.Elm}"> ..</td>      
+		     	<td th:text="${res.Sweet_Chestnut}"> ..</td>      
+		     	<td th:text="${res.Star_of_Bethlehem}"> ..</td>   
+		     	<td th:text="${res.Willow}"> ..</td>   
+		     	<td th:text="${res.Oak}"> ..</td>      
+		     	<td th:text="${res.Crab_Apple}"> ..</td>  
+		     	<td th:text="${res.Chicory}"> ..</td>  
+		     	<td th:text="${res.Vervain}"> ..</td>  
+		     	<td th:text="${res.Vine}"> ..</td>     
+		     	<td th:text="${res.Beech}"> ..</td>    
+		     	<td th:text="${res.Rock_Water}"> ..</td>  			
+    		</tr>
+    	</th:block>		
+    </table>
+	                 </form>
+	           	</div>
+            </div>
+         <div>
+    <ul>
+        <li th:each="file : ${files}">
+            <a th:href="${file}" th:text="${file}" />
+        </li>
+    </ul>
+</div>
+    </div></section>
+    
+    
+    
+   
+
+    <footer id="footer" class="midnight-blue">
+        <div class="container">
+            <div class="row">
+                <div class="container">
+                <div class="row">
+                
+                   
+          	  </div>
+                
+             
+            </div>
+                
+            </div>
+        </div>
+    </footer><!--/#footer-->
+
+    <script src="./Cursos _ Tikai_files/jquery.js.descarga"></script>
+    <script src="./Cursos _ Tikai_files/bootstrap.min.js.descarga"></script>
+    <script src="./Cursos _ Tikai_files/jquery.prettyPhoto.js.descarga"></script>
+    <script src="./Cursos _ Tikai_files/jquery.isotope.min.js.descarga"></script>
+    <script src="./Cursos _ Tikai_files/main.js.descarga"></script>
+    <script src="./Cursos _ Tikai_files/wow.min.js.descarga"></script>
+
+
+</body></html>

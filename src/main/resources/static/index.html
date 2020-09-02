@@ -1,44 +1,4 @@
-<!--
-
-<!DOCTYPE HTML>
-<html xmlns:th="http://www.thymeleaf.org">
-<head>
-    <title>Getting Started: Serving Web Content</title>
-    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
-</head>
-<body>
-   
-
-<div>
-    <form method="POST" enctype="multipart/form-data" action="/informacionFlores">
-    
-       <table>
-            <tr><td>File to upload:</td><td><input type="file" name="file" /></td></tr>
-            <tr><td></td><td><input type="submit" value="Upload" /></td></tr>
-        </table>
-    </form>
-</div>
-
-<div>
-    <ul>
-        <li th:each="file : ${files}">
-            <a th:href="${file}" th:text="${file}" />
-        </li>
-    </ul>
-</div>
-
-
-
-
-</body>
-
-
-</html>
--->
-
-
 <!DOCTYPE html>
-<!-- saved from url=(0027)http://tikai.cl/cursos.html -->
 <html lang="en" class="csstransforms csstransforms3d csstransitions" xmlns:th="http://www.thymeleaf.org"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
     
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -79,22 +39,7 @@
                     <a class="navbar-brand" href="http://tikai.cl/index.html"><img src="http://tikai.cl/images/logo.png" alt="logo"></a>
                 </div>
 				
-                <div class="collapse navbar-collapse navbar-right">
-                    <ul class="nav navbar-nav">
-                            <li class="dropdown">
-                            <a href="http://tikai.cl/cursos.html#" class="dropdown-toggle" data-toggle="dropdown">TERAPIAS <i class="fa fa-angle-down"></i></a>
-                            <ul class="dropdown-menu">
-                                <li><a href="http://tikai.cl/flores.html">Flores de Bach</a></li>
-                                <li><a href="http://tikai.cl/registros.html">Registros Akáshicos</a></li>
-                                <li><a href="http://tikai.cl/tarot.html">Tarot Terapeutico</a></li>
-                            </ul>
-                        </li>
-                         
-                        <li><a href="http://tikai.cl/cursos.html">CURSOS</a></li>
-                        <li><a href="http://tikai.cl/sobremi.html">SOBRE MI</a></li>
-                        <li><a href="http://tikai.cl/contacto.html">CONTACTO</a></li>                        
-                    </ul>
-                </div>
+               
                 
             </div><!--/.container-->
       </nav><!--/nav-->

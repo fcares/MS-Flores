@@ -50,10 +50,12 @@ public class ExcelHelper {
               Row fila = iterator.next();
               if (numeroFila >= INICIO_DE_FILA) {
             	  resultadoProcesoFlores = new ResultadoProcesoFlores();
-            	  LOG.info("--->" + fila.getCell(3));
+            	  LOG.info("--->" + fila.getCell(INICIO_DE_COLUMNA-2) + " Columna de Nombr: [" + new Integer(INICIO_DE_COLUMNA-2) + "]");
+            	  LOG.info("--->" + fila.getCell(INICIO_DE_COLUMNA) + " Primera Columna: [" + new Integer(INICIO_DE_COLUMNA) + "]");
+            	  LOG.info("--->" + fila.getCell(INICIO_DE_COLUMNA + 1) + " Segunda Columna: [" + new Integer(INICIO_DE_COLUMNA + 1) + "]");
 
-						resultadoProcesoFlores.setNombre(fila.getCell(3) != null ? fila.getCell(3).toString(): "");
-	                	resultadoProcesoFlores.setFecha(fila.getCell(4) != null ? fila.getCell(4).toString(): "");
+						resultadoProcesoFlores.setNombre(fila.getCell(INICIO_DE_COLUMNA-2) != null ? fila.getCell(INICIO_DE_COLUMNA-2).toString(): "");
+	                	resultadoProcesoFlores.setFecha(fila.getCell(INICIO_DE_COLUMNA-1) != null ? fila.getCell(INICIO_DE_COLUMNA-1).toString(): "");
 	                	resultadoProcesoFlores.setRock_rose(getValor(fila, INICIO_DE_COLUMNA, INICIO_DE_COLUMNA + 1));
 	                	resultadoProcesoFlores.setMimulus(getValor(fila, INICIO_DE_COLUMNA + 2, INICIO_DE_COLUMNA + 3));
 	                	resultadoProcesoFlores.setCherry_Plum(getValor(fila, INICIO_DE_COLUMNA + 4, INICIO_DE_COLUMNA + 5));
@@ -117,6 +119,7 @@ public class ExcelHelper {
       		resultado = "SI";   
       		//resultado = "<img src=\"file:///C|/flores/imagenes/check.jpg\" width=\"30\" height=\"30\">";
       	}
+//      	System.out.println("---------->NUMERO DE FILA [" + llave1+ "]:["+ fila.getCell(posicion1)+ "]  --  FILA 2: ["+llave2+"]:[" + fila.getCell(posicion2) +"] RESULTADO: ["+ resultado + "]");
       } 
       return resultado;
   }

@@ -25,7 +25,7 @@ public class ExcelHelper {
   
   private static int INICIO_DE_FILA = 1;
   private static String SI = "SI";
-  private static int INICIO_DE_COLUMNA = 5;
+  private static int INICIO_DE_COLUMNA = 4;
 
   public static boolean hasExcelFormat(MultipartFile file) {
 

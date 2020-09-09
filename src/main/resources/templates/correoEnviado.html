@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en" class="csstransforms csstransforms3d csstransitions" xmlns:th="http://www.thymeleaf.org"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="">
+    <meta name="author" content="">
+    <title>Ingresa tu formulario | Tikai</title>
+   
+    <link href="http://tikai.cl/css/bootstrap.min.css" rel="stylesheet">
+    <link href="http://tikai.cl/css/font-awesome.min.css" rel="stylesheet">
+    <link href="http://tikai.cl/css/prettyPhoto.css" rel="stylesheet">
+    <link href="http://tikai.cl/css/animate.min.css" rel="stylesheet">
+    <link href="http://tikai.cl/css/main.css" rel="stylesheet">
+    <link href="http://tikai.cl/css/responsive.css" rel="stylesheet">
+    <!--[if lt IE 9]>
+    <script src="js/html5shiv.js"></script>
+    <script src="js/respond.min.js"></script>
+    <![endif]-->       
+    <link rel="shortcut icon" href="http://tikai.cl/images/ico/4233favicon.ico">
+    <link rel="apple-touch-icon-precomposed" sizes="144x144" href="http://tikai.cl/images/ico/apple-touch-icon-144-precomposed.png">
+    <link rel="apple-touch-icon-precomposed" sizes="114x114" href="http://tikai.cl/images/ico/apple-touch-icon-114-precomposed.png">
+    <link rel="apple-touch-icon-precomposed" sizes="72x72" href="http://tikai.cl/images/ico/apple-touch-icon-72-precomposed.png">
+    <link rel="apple-touch-icon-precomposed" href="http://tikai.cl/images/ico/apple-touch-icon-57-precomposed.png">
+</head><!--/head-->
+<body style="">
+
+
+    <header id="header">
+       
+
+        <nav class="navbar navbar-inverse" role="banner">
+            <div class="container">
+                <div class="navbar-header">
+                    <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+                        <span class="sr-only">Toggle navigation</span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                    </button>
+                    <a class="navbar-brand" href="http://tikai.cl/index.html"><img src="http://tikai.cl/images/logo.png" alt="logo"></a>
+                </div>
+			    
+            </div><!--/.container-->
+      </nav><!--/nav-->
+        
+    </header><!--/header-->
+    <div class="container">
+            <div class="center"> 
+    			<div class="col-sm-12 text-center">
+	               <p th:text="'ASUNTO ENVIADO:   ' + ${AsuntoCorreo}"/>
+	               <p th:text="'ARCHIVO CON CORREOS:   ' + ${archivoConCorreos}"/>
+	               <p th:text="'ARCHIVO CON HTML:   ' + ${ArchivosConHTML}"/>
+	               <p th:text="'Correos Enviados:   '"/>
+	               <p/>
+		               <div align="center">
+			               <table border="0">
+								<th:block th:each="res : ${correos}">
+						    		<tr>
+						 				<td th:text="${res}"></td>		     	 			
+						    		</tr>
+						    	</th:block>		
+						    </table>
+					    </div>
+				    
+	            </div>
+	         </div>
+	 </div>           
+    
+   
+
+    <footer id="footer" class="midnight-blue">
+        <div class="container">
+            <div class="row">
+                <div class="container">
+                <div class="row">
+                
+                   
+          	  </div>
+                
+             
+            </div>
+                
+            </div>
+        </div>
+    </footer><!--/#footer-->
+
+    <script src="./Cursos _ Tikai_files/jquery.js.descarga"></script>
+    <script src="./Cursos _ Tikai_files/bootstrap.min.js.descarga"></script>
+    <script src="./Cursos _ Tikai_files/jquery.prettyPhoto.js.descarga"></script>
+    <script src="./Cursos _ Tikai_files/jquery.isotope.min.js.descarga"></script>
+    <script src="./Cursos _ Tikai_files/main.js.descarga"></script>
+    <script src="./Cursos _ Tikai_files/wow.min.js.descarga"></script>
+
+
+</body></html>

@@ -36,6 +36,44 @@ public class ExcelHelper {
     return true;
   }
 
+  
+  
+  public static ArrayList<String> leeCorreosDeExcel(InputStream is) {
+	  ArrayList<String> correos = new ArrayList<String>();
+	    try {      	
+      	LOG.info("********INICIANDO LECTURA DE CORREOS*******************");
+      	Workbook workbook = new XSSFWorkbook(is);
+      	
+          Sheet hoja = (XSSFSheet) workbook.getSheetAt(0);
+          int numeroFila = 0;
+          for (Iterator<Row> iterator = hoja.rowIterator(); iterator.hasNext(); numeroFila++) {
+              Row fila = iterator.next();
+              if (fila.getCell(0) != null) {
+            	  if (!fila.getCell(0).toString().equalsIgnoreCase("")) {
+	              correos.add(fila.getCell(0).toString()) ;
+	              LOG.info("correo : [" + fila.getCell(0).toString() + "]"); 
+            	  }
+              }
+          }
+          LOG.info("Cantidad de correos : [" + numeroFila + "]"); 
+         } catch (Exception e) {
+        	 e.printStackTrace();
+		}	   
+	    return correos;
+  }  
+  
+  public static String leerCuerpoCorreo(InputStream is) {
+	  String correos = "";
+	    try {      	
+      	LOG.info("********INICIANDO LECTURA DE CUERPO DEL CORREO*******************");
+      	
+
+         
+         } catch (Exception e) {
+        	 e.printStackTrace();
+		}	   
+	    return correos;
+  }  
  
   public static ArrayList<ResultadoProcesoFlores> leeExcel(InputStream is) {
 	  ArrayList<ResultadoProcesoFlores> resumenFlores = new ArrayList<ResultadoProcesoFlores>();
@@ -117,9 +155,7 @@ public class ExcelHelper {
       if (fila.getCell(posicion1) != null && fila.getCell(posicion2) != null) {
       	if (fila.getCell(posicion1).toString().equalsIgnoreCase(SI) && fila.getCell(posicion2).toString().equalsIgnoreCase(SI)) {
       		resultado = "SI";   
-      		//resultado = "<img src=\"file:///C|/flores/imagenes/check.jpg\" width=\"30\" height=\"30\">";
       	}
-//      	System.out.println("---------->NUMERO DE FILA [" + llave1+ "]:["+ fila.getCell(posicion1)+ "]  --  FILA 2: ["+llave2+"]:[" + fila.getCell(posicion2) +"] RESULTADO: ["+ resultado + "]");
       } 
       return resultado;
   }
